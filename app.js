@@ -12,6 +12,8 @@ const globalErrorMiddleware = require('./app/middlewares/appErrorHandler');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 
+const port = process.env.PORT || 3000;
+
 
 app.use(morgan('dev'));
 
@@ -67,7 +69,7 @@ app.use(globalErrorMiddleware.globalNotFoundHandler);
 const server = http.createServer(app);
 // start listening to http server
 console.log(appConfig);
-server.listen(appConfig.port);
+server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 

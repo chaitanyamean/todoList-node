@@ -350,7 +350,6 @@ getUserById = (req, res) => {
 
 addToDoList = (req, res) => {
     
-   // console.log(req.body);
     let newTodoList = new Todo({
         userId: req.body.userId,
         toDoName: req.body.toDoName,
@@ -378,7 +377,6 @@ addToDoList = (req, res) => {
 }
 
 getToDoList = (req, res) => {
-   // console.log(req.params.userId);
     Todo.find({'userId':req.params.userId}).select().lean().exec((err, result) => {
         if(err) {
             let apiResponse = response.generate(true, 'Failed to find users', 500, null)
@@ -395,7 +393,6 @@ getToDoList = (req, res) => {
 
 updateToDoList = (req, res) => {
     let options = req.body;
-   // console.log('TODO', options);
     Todo.update({'toDoItemId': req.body.toDoItemId}, options)
     .exec((err, result) => {
         if(err) {

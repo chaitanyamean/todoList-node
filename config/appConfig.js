@@ -4,7 +4,7 @@ appConfig.port = 3000;
 appConfig.allowedCorsOrigin = "*";
 appConfig.env = "dev";
 appConfig.db = {
-    uri: 'mongodb://127.0.0.1:27017/edwisortodolist'
+    uri: 'mongodb://todowithsocket:todowithsocket123@ds123224.mlab.com:23224/projectnameistodo'
   }
 appConfig.apiVersion = '/api/v1';
 
